@@ -1,32 +1,29 @@
 # simple-compiler
 A compiler for basic C code written in C, flex and bison.
-This code was written in four parts as a school project, described below. Files [file names here] are not included.
+This code was written in four parts as a school project, described below. Files backend-x86.[hc], symtab.[hc], types.[hc], bucket.[hc] or message.[hc]  are not included for of copyright reasons.
 https://cse.sc.edu/~fenner/csce531
 
-## Testing
+## Usage
  Run
  
-    ./pcc3 < T2Lxxx_ok.c > T2Lxxx_ok.s
+    ./pcc3 < infile > outfile.s
 
  where 'xxx' is the level number. Then run
  
-    gcc -m32 T2Lxxx_ok.s libxxx.c
+    gcc -m32 outfile.s libxxx.c
 
 each time you want to execute your program, or run
 
-    gcc -m32 -c libxxx.c
+    gcc -m32 -c lib100.c
 
 once, then run
 
-    gcc -m32 T2Lxxx_ok.s libxxx.o
-
-on subsequent tests on the same level. Note that there is no lib100.c, as none is needed. Finally, run
-
+    gcc -m32 outfile.s lib100.o
     ./a.out
 
 
 ## Part 1
-###Process C global variable declarations.
+### Process C global variable declarations.
 
 This involves both installing the declarations into the symbol table and allocating memory for the variables in the assembly language output file. Also, after all declarations have been processed, you should dump the symbol table (using st_dump() from symtab.h); to do this, run your executable with the "-d" or "--dump" option as a command line argument.
 
