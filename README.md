@@ -1,6 +1,6 @@
 # simple-compiler
 A compiler for basic C code written in C, flex and bison.
-This code was written in four parts as a school project, described below. Files backend-x86.[hc], symtab.[hc], types.[hc], bucket.[hc] or message.[hc]  are not included for of copyright reasons.
+This code was written in four parts as a school project, described below. Files backend-x86.[hc], symtab.[hc], types.[hc], bucket.[hc] and message.[hc] are not included for of copyright reasons.
 https://cse.sc.edu/~fenner/csce531
 
 ## Usage
