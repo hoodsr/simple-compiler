@@ -1,4 +1,7 @@
 # simple-compiler
+### Shannon Hood and Kelly Benson
+
+
 A compiler for basic C code written in C, flex and bison.
 This code was written in four parts as a school project, described below. Files backend-x86.[hc], symtab.[hc], types.[hc], bucket.[hc] and message.[hc] are not included for of copyright reasons.
 https://cse.sc.edu/~fenner/csce531
