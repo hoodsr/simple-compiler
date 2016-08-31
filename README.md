@@ -5,18 +5,23 @@ https://cse.sc.edu/~fenner/csce531
 
 ## Testing
  Run
+ 
     ./pcc3 < T2Lxxx_ok.c > T2Lxxx_ok.s
 
  where 'xxx' is the level number. Then run
+ 
     gcc -m32 T2Lxxx_ok.s libxxx.c
 
 each time you want to execute your program, or run
+
     gcc -m32 -c libxxx.c
 
 once, then run
+
     gcc -m32 T2Lxxx_ok.s libxxx.o
 
 on subsequent tests on the same level. Note that there is no lib100.c, as none is needed. Finally, run
+
     ./a.out
 
 
