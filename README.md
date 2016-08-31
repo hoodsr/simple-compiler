@@ -23,7 +23,7 @@ once, then run
 
 
 ## Part 1
-### Process C global variable declarations.
+### Process C global variable declarations
 
 This involves both installing the declarations into the symbol table and allocating memory for the variables in the assembly language output file. Also, after all declarations have been processed, you should dump the symbol table (using st_dump() from symtab.h); to do this, run your executable with the "-d" or "--dump" option as a command line argument.
 
