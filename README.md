@@ -5,28 +5,24 @@ https://cse.sc.edu/~fenner/csce531
 
 ## Testing
  Run
-
     ./pcc3 < T2Lxxx_ok.c > T2Lxxx_ok.s
 
  where 'xxx' is the level number. Then run
-
     gcc -m32 T2Lxxx_ok.s libxxx.c
 
 each time you want to execute your program, or run
-
     gcc -m32 -c libxxx.c
 
 once, then run
-
     gcc -m32 T2Lxxx_ok.s libxxx.o
 
 on subsequent tests on the same level. Note that there is no lib100.c, as none is needed. Finally, run
-
     ./a.out
 
 
 ## Part 1
-###Process C global variable declarations. 
+###Process C global variable declarations.
+
 This involves both installing the declarations into the symbol table and allocating memory for the variables in the assembly language output file. Also, after all declarations have been processed, you should dump the symbol table (using st_dump() from symtab.h); to do this, run your executable with the "-d" or "--dump" option as a command line argument.
 
 Your compiler should read C source code from stdin and write the x86 assembly language output to stdout. Your compiler executable should be called pcc3. You will not have to emit assembly code explicitly, but rather call appropriate routines in the back end (backend-x86.c and backend-x86.h). Besides altering the gram.y file, put syntax tree-building functions into a new file tree.c, with definitions for export in tree.h. Put code-generating routines into a new file encode.c, with definitions for export in encode.h. With few exceptions throughout the project, all backend routines are called from encode.c (some may be called directly from the grammar). No backend routines should be called from tree.c, hence you will not need to include backend-x86.h in tree.c.
@@ -58,7 +54,7 @@ You may allow the compiler to stop processing with the first syntax error. A syn
 
 
 ## Part 2
-###Process C function definitions and C expression statements.
+###Process C function definitions and C expression statements
 
 To receive 80% of the credit: You must be able to handle function definitions. This includes determining the function return type (you are only responsible for handling functions that return int, char, float, and double), installing the function in the symbol table, generating the necessary assembly code to enter and exit the function, and generating the assembly code for the function body (the statements inside the function). At this level you do not need to handle parameter or local variable declarations.
 
@@ -74,7 +70,7 @@ You are also responsible for doing the appropriate semantic error checking. For 
 
 You need not issue an error message for an expression statement that has no side effects. That is, this statement may be processed without a message:
 
-                       x+6;
+    x+6;
 
 Above, the value of the expression "x+6" is simply ignored. Since we are not yet implementing the return statement, you do not need to check that the proper type is being returned by a function being defined.
 
@@ -123,7 +119,7 @@ The relevant back end routine for applying a conversion operator is b_convert().
 
 
 ## Part 3
-###Process C control statements.
+###Process C control statements
 
 To receive 80% of the credit (90% of the undergraduate credit): You must process if statements, while statements, break statements, and return statements. Be sure to do the appropriate semantic error checking: break cannot appear outside a while, etc. Consult the appropriate C references and your favorite compilers to determine what conversions are applied to the return expressions.
 
